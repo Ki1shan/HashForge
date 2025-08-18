@@ -47,7 +47,7 @@ It is designed for cybersecurity learners, penetration testers, and security pro
 
 ### 1. Clone the Repository
 ```
-git clone https://github.com/yourusername/HashForge.git
+https://github.com/Ki1shan/HashForge-Project.git
 cd HashForge
 ```
 ### 2. Install Requirements 
