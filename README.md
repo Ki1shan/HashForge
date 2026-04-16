@@ -1,66 +1,120 @@
-# HashForge
+# 🔐 HashForge
 
-**HashForge** is a GUI-based Python toolkit for detecting, generating, and cracking hashes.  
-It is designed for cybersecurity learners, penetration testers, and security professionals who want a simple yet powerful way to experiment with cryptographic hashes.
-
----
-
-## 🎯 Purpose of Building HashForge
-
-1. **Educational Learning**  
-   To deeply understand how password hashing, storage, and cracking work in real-world cybersecurity.  
-   Many organizations store passwords as hashes; knowing how attackers crack these helps build better defenses.
-
-2. **Hands-On Hacker Tool**  
-   To practice and demonstrate dictionary-based hash cracking using popular algorithms (MD5, SHA variants, NTLM, bcrypt, etc.), helping identify weak or compromised passwords.
-
-3. **Security Testing and Auditing**  
-   Tools like this help penetration testers and security teams audit password strength and identify vulnerabilities in systems that store hashed passwords.
-
-4. **Foundation for Advanced Development**  
-   This tool serves as a base to add more complex cracking methods and tools (brute-force, GPU acceleration, batch operations).
+**HashForge** is a Python-based hash analysis and testing toolkit designed for **educational and authorized penetration testing purposes**. It helps in understanding password security, hashing mechanisms, and common attack techniques like dictionary and brute-force attacks.
 
 ---
 
-## ✨ Features
+## 🚀 Features
 
-- 🔍 **Hash Detection**  
-  Automatically identifies common hash types such as MD5, SHA1, SHA224, SHA256, SHA384, SHA512, NTLM, bcrypt, and Base64.
-
-- 🗝️ **Hash Cracking**  
-  - Supports dictionary-based attacks with custom wordlists  
-  - Optional salts for cracking  
-  - Mutation rules (capitalize, reverse, leet, upper)  
-  - Multi-threaded cracking for responsiveness  
-
-- 🧪 **Password → Hash Generator**  
-  Generate test hashes for your own passwords in multiple formats:  
-  - MD5, SHA1, SHA224, SHA256, SHA384, SHA512  
-  - NTLM  
-  - bcrypt  
-  - Base64  
-
-- 🖥️ **User-Friendly GUI**  
-  Built with Tkinter, HashForge provides a split-pane interface for cracking and generating hashes side by side.
+* 🔍 **Hash Detection** – Identify possible hash algorithms based on patterns and length
+* 📖 **Dictionary Attack** – Test hashes using wordlists
+* 💨 **Brute Force Attack** – Generate combinations to match hashes
+* ⚡ **Multi-Processing** – Utilizes CPU cores for faster execution
+* 🌐 **Web Dashboard** – Monitor attack progress via browser
+* 📂 **Batch Processing** – Handle multiple hashes at once
 
 ---
 
-### 1. Clone the Repository
-```
-https://github.com/Ki1shan/HashForge-Project.git
-cd HashForge
-```
-### 2. Install Requirements 
-```
-  pip3 install bcrypt requests
+## 🧠 Supported Algorithms
 
-```
-### 3. Run the tool
-```
-  python3 hashforge.py
+HashForge supports commonly used hashing algorithms including:
+
+* MD5, SHA1, SHA256, SHA512
+* NTLM, LM
+* bcrypt, PBKDF2 (basic support)
+* Base64, Hex encoding
+
+> Note: Focus is on understanding hashing concepts rather than replicating specialized tools like Hashcat.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Language:** Python
+* **Backend:** Flask (for web interface)
+* **Libraries:** multiprocessing, hashlib, bcrypt
+* **Optional:** argon2, pyopencl (experimental support)
+
+---
+
+## ⚙️ Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Ki1shan/HashForge-Project.git
+cd HashForge-Project
+
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-## ⚖️ Disclaimer
+---
 
-This project is for educational and authorized penetration testing only.
-The author is not responsible for misuse of this tool. Always have legal permission before testing any system
+## ▶️ Usage
+
+### 🔹 Run CLI Mode
+
+```bash
+python hashforge.py
+```
+
+### 🔹 Run Web Dashboard
+
+```bash
+python hashforge.py --web
+# Open http://127.0.0.1:5000
+```
+
+---
+
+## 📌 Example Commands
+
+```bash
+# Detect hash type
+python hashforge.py -d <hash>
+
+# Dictionary attack
+python hashforge.py -h <hash> -w wordlist.txt
+
+# Brute force
+python hashforge.py -h <hash> --brute
+
+# Generate hash
+python hashforge.py -g password123
+```
+
+---
+
+## 🎯 Learning Objectives
+
+This project was built to:
+
+* Understand how hashing algorithms work
+* Learn password cracking techniques used in security testing
+* Explore performance optimization using multiprocessing
+* Gain practical exposure to cybersecurity concepts
+
+---
+
+## ⚠️ Disclaimer
+
+This tool is developed **strictly for educational and authorized security testing purposes**.
+
+* Do not use on systems without permission
+* Unauthorized use may be illegal
+* The author is not responsible for misuse
+
+---
+
+## 📜 License
+
+MIT License
+
+---
+
+## 👨‍💻 Author
+
+**Kishan N**
+Cybersecurity Enthusiast | Penetration Testing | API Security
+
+GitHub: https://github.com/Ki1shan
